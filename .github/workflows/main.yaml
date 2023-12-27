@@ -35,6 +35,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: .env setting
+        run: |
+          echo "VITE_TEST_KEY=${{ secrets.VITE_TEST_KEY }}" >> .env
+
       - name: install yarn dependencies
         run: yarn install
 
